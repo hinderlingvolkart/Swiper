@@ -54,6 +54,7 @@
     "jshint-stylish": "^2.2.1"
   },
   "scripts": {
-    "test": "gulp build"
+    "test": "gulp build",
+    "build": "gulp build"
   }
 }
