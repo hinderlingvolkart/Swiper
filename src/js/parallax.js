@@ -41,7 +41,7 @@ function setParallaxTransform(el, progress) {
 }
 s.parallax = {
     setTranslate: function () {
-        s.container.children('[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y]').each(function(){
+        s.container.find('[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y]').each(function(){
             setParallaxTransform(this, s.progress);
 
         });

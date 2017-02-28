@@ -401,7 +401,7 @@ if (s.params.grabCursor && s.support.touch) {
 }
 
 // Wrapper
-s.wrapper = s.container.children('.' + s.params.wrapperClass);
+s.wrapper = s.container.find('.' + s.params.wrapperClass);
 
 // Pagination
 if (s.params.pagination) {
