@@ -45,6 +45,12 @@
         -webkit-align-items: center;
         align-items: center;
     }
+    .swiper-slide-active {
+        color: #719B00;
+    }
+    .swiper-slide-visible {
+        background: #E8FEAE;
+    }
     </style>
 </head>
 <body>
@@ -75,7 +81,8 @@
         pagination: '.swiper-pagination',
         slidesPerView: 3,
         paginationClickable: true,
-        spaceBetween: 30
+        spaceBetween: 30,
+        watchSlidesVisibility: true
     });
     </script>
 </body>

@@ -102,8 +102,8 @@
                 'src/js/lazy-load.js',
                 // 'src/js/scrollbar.js',
                 'src/js/controller.js',
-                'src/js/hashnav.js',
-                'src/js/history.js',
+                // 'src/js/hashnav.js',
+                // 'src/js/history.js',
                 'src/js/keyboard.js',
                 // 'src/js/mousewheel.js',
                 'src/js/parallax.js',
@@ -204,8 +204,8 @@
             .pipe(sourcemaps.init())
             .pipe(concat(swiper.filename + '.js'))
             .pipe(header(swiper.banner, { pkg : swiper.pkg, date: swiper.date } ))
-            .pipe(jshint())
-            .pipe(jshint.reporter(stylish))
+            // .pipe(jshint())
+            // .pipe(jshint.reporter(stylish))
             .pipe(sourcemaps.write('./maps/'))
             .pipe(gulp.dest(paths.build.scripts));
 

@@ -55,6 +55,6 @@
   },
   "scripts": {
     "test": "gulp build",
-    "build": "gulp build"
+    "build": "gulp dist"
   }
 }
