@@ -201,12 +201,12 @@
             .pipe(tap(function (file, t){
                 addJSIndent (file, t);
             }))
-            .pipe(sourcemaps.init())
+            // .pipe(sourcemaps.init())
             .pipe(concat(swiper.filename + '.js'))
             .pipe(header(swiper.banner, { pkg : swiper.pkg, date: swiper.date } ))
             // .pipe(jshint())
             // .pipe(jshint.reporter(stylish))
-            .pipe(sourcemaps.write('./maps/'))
+            // .pipe(sourcemaps.write('./maps/'))
             .pipe(gulp.dest(paths.build.scripts));
 
 
@@ -214,28 +214,28 @@
             .pipe(tap(function (file, t){
                 addJSIndent (file, t);
             }))
-            .pipe(sourcemaps.init())
+            // .pipe(sourcemaps.init())
             .pipe(concat(swiper.filename + '.jquery.js'))
             .pipe(header(swiper.banner, { pkg : swiper.pkg, date: swiper.date } ))
-            .pipe(sourcemaps.write('./maps/'))
+            // .pipe(sourcemaps.write('./maps/'))
             .pipe(gulp.dest(paths.build.scripts));
         gulp.src(swiper.jQueryUMDFiles)
             .pipe(tap(function (file, t){
                 addJSIndent (file, t);
             }))
-            .pipe(sourcemaps.init())
+            // .pipe(sourcemaps.init())
             .pipe(concat(swiper.filename + '.jquery.umd.js'))
             .pipe(header(swiper.banner, { pkg : swiper.pkg, date: swiper.date } ))
-            .pipe(sourcemaps.write('./maps/'))
+            // .pipe(sourcemaps.write('./maps/'))
             .pipe(gulp.dest(paths.build.scripts));
         gulp.src(swiper.Framework7Files)
             .pipe(tap(function (file, t){
                 addJSIndent (file, t, true);
             }))
-            .pipe(sourcemaps.init())
+            // .pipe(sourcemaps.init())
             .pipe(concat(swiper.filename + '.framework7.js'))
             .pipe(header(swiper.banner, { pkg : swiper.pkg, date: swiper.date } ))
-            .pipe(sourcemaps.write('./maps/'))
+            // .pipe(sourcemaps.write('./maps/'))
             .pipe(gulp.dest(paths.build.scripts))
             .pipe(connect.reload());
         cb();
@@ -273,35 +273,35 @@
     gulp.task('dist', function () {
         gulp.src([paths.build.scripts + swiper.filename + '.js'])
             .pipe(gulp.dest(paths.dist.scripts))
-            .pipe(sourcemaps.init())
+            // .pipe(sourcemaps.init())
             .pipe(uglify())
             .pipe(header(swiper.banner, { pkg : swiper.pkg, date: swiper.date }))
             .pipe(rename(function(path) {
                 path.basename = swiper.filename + '.min';
             }))
-            .pipe(sourcemaps.write('./maps'))
+            // .pipe(sourcemaps.write('./maps'))
             .pipe(gulp.dest(paths.dist.scripts));
 
         gulp.src([paths.build.scripts + swiper.filename + '.jquery.js'])
             .pipe(gulp.dest(paths.dist.scripts))
-            .pipe(sourcemaps.init())
+            // .pipe(sourcemaps.init())
             .pipe(uglify())
             .pipe(header(swiper.banner, { pkg : swiper.pkg, date: swiper.date } ))
             .pipe(rename(function(path) {
                 path.basename = swiper.filename + '.jquery.min';
             }))
-            .pipe(sourcemaps.write('./maps'))
+            // .pipe(sourcemaps.write('./maps'))
             .pipe(gulp.dest(paths.dist.scripts));
 
         gulp.src([paths.build.scripts + swiper.filename + '.jquery.umd.js'])
             .pipe(gulp.dest(paths.dist.scripts))
-            .pipe(sourcemaps.init())
+            // .pipe(sourcemaps.init())
             .pipe(uglify())
             .pipe(header(swiper.banner, { pkg : swiper.pkg, date: swiper.date } ))
             .pipe(rename(function(path) {
                 path.basename = swiper.filename + '.jquery.umd.min';
             }))
-            .pipe(sourcemaps.write('./maps'))
+            // .pipe(sourcemaps.write('./maps'))
             .pipe(gulp.dest(paths.dist.scripts));
 
         gulp.src(paths.build.styles + '*.css')
